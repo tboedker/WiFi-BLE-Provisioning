@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WIFI_BLE_Prov" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="10" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2in-JO-3V4">
+                                <rect key="frame" x="5" y="83" width="590" height="512"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="180" id="cn8-5d-6mQ" customClass="MyTableViewCell" customModule="WIFI_BLE_Prov" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="365" height="180"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cn8-5d-6mQ" id="c9k-lM-ZYU">
+                                            <rect key="frame" x="0.0" y="0.0" width="365" height="180"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WiFi_BLE_Tool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubw-hr-ML2">
+                                                    <rect key="frame" x="16" y="71" width="0.0" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WiFi_BLE_Tool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgE-nq-6l0">
+                                                    <rect key="frame" x="20" y="55" width="325" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="844-Ya-eiS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="29"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kgE-nq-6l0" firstAttribute="leading" secondItem="c9k-lM-ZYU" secondAttribute="leading" constant="20" symbolic="YES" id="cXo-I4-gHu"/>
+                                                <constraint firstAttribute="trailing" secondItem="kgE-nq-6l0" secondAttribute="trailing" constant="20" symbolic="YES" id="j3v-2r-H7c"/>
+                                                <constraint firstItem="kgE-nq-6l0" firstAttribute="centerX" secondItem="c9k-lM-ZYU" secondAttribute="centerX" id="vEx-ne-QSR"/>
+                                                <constraint firstItem="kgE-nq-6l0" firstAttribute="centerY" secondItem="c9k-lM-ZYU" secondAttribute="centerY" id="zOw-5h-I0c"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="myLabel" destination="kgE-nq-6l0" id="b1u-LC-ZFW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="mew-OF-fD1"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="wvB-Ih-sSj"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wi-Fi Device discovery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWi-AH-DhJ">
+                                <rect key="frame" x="198" y="0.0" width="205" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="Usb-b7-kyE"/>
+                                    <constraint firstAttribute="width" constant="205" id="lUI-Ya-dSj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AB8-ey-qZr">
+                                <rect key="frame" x="125" y="247" width="351" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="351" id="Hjo-bU-yA8"/>
+                                    <constraint firstAttribute="height" constant="107" id="hST-S4-7kt"/>
+                                </constraints>
+                                <string key="text">Wi-Fi Devices with BLE 
+advertising the dedicated service_uuid 
+will appear in this list </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VWi-AH-DhJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2SB-Ek-h4Q"/>
+                            <constraint firstItem="2in-JO-3V4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="2fH-9u-f95"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2in-JO-3V4" secondAttribute="bottom" constant="5" id="Ji5-fi-JHU"/>
+                            <constraint firstItem="AB8-ey-qZr" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="UwW-QH-gzH"/>
+                            <constraint firstItem="AB8-ey-qZr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="itu-Vh-cys"/>
+                            <constraint firstItem="2in-JO-3V4" firstAttribute="top" secondItem="VWi-AH-DhJ" secondAttribute="bottom" constant="50" id="lfu-Gw-MPX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2in-JO-3V4" secondAttribute="trailing" constant="5" id="qEq-Wk-Rj9"/>
+                            <constraint firstItem="VWi-AH-DhJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="x38-fp-CZt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblDeviceInfo" destination="AB8-ey-qZr" id="8tF-Jh-4BZ"/>
+                        <outlet property="tblPeripherals" destination="2in-JO-3V4" id="Q7d-S0-ucM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="103.07692307692308" y="69.66824644549763"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
