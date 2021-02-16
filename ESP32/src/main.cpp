@@ -1,5 +1,8 @@
 #include "board.h"
 #include <Arduino.h>
+#include <WiFi.h>
+#include <HttpClient.h>
+
 #include <BLEDevice.h>
 #include <BLEUtils.h>
 #include <BLEServer.h>
@@ -98,6 +101,8 @@ class MyCallbacks : public BLECharacteristicCallbacks
         Serial.println(pass);
 
         // WIFI begin with credentials
+        WiFi.begin(ssid.c_str(), pass.c_str());
+        
       }
 
       Serial.println();
@@ -118,7 +123,6 @@ class MyServerCallbacks : public BLEServerCallbacks
   }
 };
 
-
 // -----------------------------------------------------------------------------------------------
 
 void setup()
@@ -129,8 +133,10 @@ void setup()
 
   if (digitalRead(BTN_PROV) == true)
   {
-
     Serial.println("Prov button NOT pushed");
+
+    WiFi.begin();
+
   }
   else
   {
@@ -171,54 +177,59 @@ void setup()
     pSecurity->setCapability(ESP_IO_CAP_NONE);
     pSecurity->setInitEncryptionKey(ESP_BLE_ENC_KEY_MASK | ESP_BLE_ID_KEY_MASK);
 
-    pCharacteristics->setValue("Connected to ESP32 BLE");
-    pCharacteristics->notify();
   }
 }
 
-
 // -----------------------------------------------------------------------------------------------
-
 
 void loop()
 {
 
-  unsigned long cpuTime = millis();
 
   if (prov_state == false)
   {
 
-    // Your code
-  }
+    // Your code goes here
+
+    //Below is just an example of showing if ESP is connected
+    delay(1000);
+    if (WiFi.isConnected() == true)
+    {
+      Serial.println("Connected");
+      Serial.println(WiFi.localIP());
+    } else {
+      Serial.print(".");
+    }
+
+
+  } 
   else
   {
+    // ESP is in provision mode and indicates this with LED blink
     delay(500);
     digitalWrite(BLUE_LED_PIN, HIGH);
     Serial.print(".");
     delay(500);
     digitalWrite(BLUE_LED_PIN, LOW);
 
-    if (ftsclient.connected)
+    if (WiFi.isConnected())
     {
+      String ip = "IP:" + WiFi.localIP().toString();
+      Serial.println(ip);
 
-      pCharacteristics->setValue(ftsclient.IPaddress.c_str());
+      pCharacteristics->setValue(ip.c_str());
       pCharacteristics->notify();
-      resetPending = true;
-    }
 
-    if (resetPending == true)
-    {
-      delay(1000);
-      Serial.println("\n\nWill leave provisioning mode and reboot\n\n");
-      pCharacteristics->setValue("RESET");
-      pCharacteristics->notify();
-      delay(3000);
+      delay(2000);
       ESP.restart();
     }
+
   }
 
-  if ((digitalRead(BTN_PROV) == 0) && (prov_state == false))
+  if ((digitalRead(BTN_PROV) == false) && (prov_state == false))
   {
     ESP.restart();
   }
+
+
 }
