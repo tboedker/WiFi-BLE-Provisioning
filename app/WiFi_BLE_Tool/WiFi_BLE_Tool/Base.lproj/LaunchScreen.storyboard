@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Wi-Fi" translatesAutoresizingMaskIntoConstraints="NO" id="EhR-s9-Q7T">
+                                <rect key="frame" x="20" y="162" width="374" height="573"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rS9-8O-gI2">
+                                <rect key="frame" x="0.0" y="314" width="414" height="268"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="268" id="sOh-yK-F0n"/>
+                                </constraints>
+                                <string key="text">Wi-Fi - BLE
+provisioning tool</string>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="39"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="designbyBoedker 2021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNY-Bw-Fr0">
+                                <rect key="frame" x="20" y="841" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="etf-p1-3Eu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fNY-Bw-Fr0" secondAttribute="trailing" constant="20" id="Bq7-k9-xef"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rS9-8O-gI2" secondAttribute="trailing" id="Hkb-K7-6eq"/>
+                            <constraint firstItem="fNY-Bw-Fr0" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="SDo-is-dUa"/>
+                            <constraint firstItem="EhR-s9-Q7T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="118" id="ZBk-am-BlA"/>
+                            <constraint firstItem="fNY-Bw-Fr0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="c6y-kV-hr5"/>
+                            <constraint firstItem="EhR-s9-Q7T" firstAttribute="leading" secondItem="fNY-Bw-Fr0" secondAttribute="leading" id="dGd-Pc-mb8"/>
+                            <constraint firstItem="rS9-8O-gI2" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-5" id="g97-kN-NcA"/>
+                            <constraint firstItem="rS9-8O-gI2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kYE-IO-ffA"/>
+                            <constraint firstItem="EhR-s9-Q7T" firstAttribute="trailing" secondItem="fNY-Bw-Fr0" secondAttribute="trailing" id="uas-OU-q4V"/>
+                            <constraint firstItem="EhR-s9-Q7T" firstAttribute="centerY" secondItem="rS9-8O-gI2" secondAttribute="centerY" id="uvr-jT-Rfz"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Wi-Fi" width="1200" height="1200"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
